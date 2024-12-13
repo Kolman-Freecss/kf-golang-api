@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"kf-golang-api/routes"
+)
 
 func main() {
-	fmt.Println("Hello, world!")
+	r := routes.SetupRouter()
+	err := r.Run(":8080")
+	if err != nil {
+		return
+	}
 }
